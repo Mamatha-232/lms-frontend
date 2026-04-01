@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  @apply bg-white text-slate-900 min-h-screen font-sans transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.neu-card {
+  box-shadow: 6px 6px 16px rgba(0,0,0,0.25), -6px -6px 16px rgba(255,255,255,0.08);
+  background: #ffffff;
+}
+
+.dark .neu-card {
+  box-shadow: 6px 6px 16px rgba(0,0,0,0.25), -6px -6px 16px rgba(255,255,255,0.08);
+  background: #0f172a;
+}
+
+.btn-primary {
+  @apply inline-block bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-2 px-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition;
+}
+
+.btn-secondary {
+  @apply inline-block border border-slate-300 text-slate-900 py-2 px-4 rounded-xl hover:bg-slate-100 transition;
+}
+
+.dark .btn-secondary {
+  @apply border-white/20 text-white hover:bg-white/10;
+}
